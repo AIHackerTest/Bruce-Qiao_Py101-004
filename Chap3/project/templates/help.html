@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block help %}
+
+<form action="/" method="GET">
+  {% for item in outcome %}
+    <p>{{ item }}</p>
+  {% endfor %}
+</form>
+
+{% endblock %}

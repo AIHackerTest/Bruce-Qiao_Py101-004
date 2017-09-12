@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>天气状况查询</h1>
+<form action="" method="POST">
+  <p>
+    <input type="text" name="location" placeholder="请输入要查询的城市">
+    <input type="submit" name="action" value="查询">
+    <input type="submit" name="action" value="帮助">
+    <input type="submit" name="action" value="历史">
+  </p>
+</form>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
+{% if help_information %}
+  </br>输入城市名，按查询获得天气信息；</br>
+      按帮助获得帮助信息；</br>
+      按历史获得查询历史信息。</br>
+{% endif %}
+
+{% if inquiry_outcome %}
+  <h2>{{ inquiry_outcome['city'] }}</h2>
+  <p>天气:{{ inquiry_outcome['weather_condition'] }}</p>
+  <p>温度:{{ inquiry_outcome['temperature'] }}°C</p>
+  <p>时间:{{ inquiry_outcome['update_time'] }}</p>
+{% endif %}
+
+{% if inquiry_history %}
+  {% for item in inquiry_history %}
+  </br>{{ item['city'] }}：
+      {{ item['weather_condition'] }}
+      {{ item['temperature'] }}°C
+      更新时间：{{ item['update_time'] }}</br>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}

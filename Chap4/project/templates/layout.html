@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <title>Weaher Inquiry API</title>
+</head>
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+  <style>
+  body {
+      background-image: url("https://static.pexels.com/photos/424163/pexels-photo-424163.jpeg");
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+
+  h1 {
+      color: red;
+      text-align: center;
+  }
+
+  p {
+      font-size: 20px;
+  }
+
+  input[type=text] {
+      #width: 100%;
+      padding: 0px 20px;
+      margin: 5px 0;
+      box-sizing: border-box;
+  }
+
+  </style>
+<div class="container-fluid" style="text-align: center;">
+<body>
+  <br/>
+  {% block content %}
+  {% endblock %}
+</body>
+
+</br>
+</br>
+<footer class="container">
+  <p class="text-center">数据来源：
+    <a href="https://www.seniverse.com/">心知天气</a>
+  </p>
+</footer>
+</div>
+</html>

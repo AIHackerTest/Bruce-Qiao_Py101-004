@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>天气状况查询</h1>
+<form action="" method="POST">
+  <p>
+    <input type="text" name="location" placeholder="请输入要查询的城市">
+    <input type="submit" name="action" value="查询" class="btn  btn-sm btn-primary">
+    <input type="submit" name="action" value="帮助" class="btn  btn-sm btn-success">
+    <input type="submit" name="action" value="历史" class="btn  btn-sm btn-info">
+    <input type="submit" name="action" value="更正" class="btn  btn-sm btn-warning">
+  </p>
+</form>
+
+{% if error %}
+  <p>{{ error }}</p>
+{% endif %}
+
+{% if is_updated %}
+  <p>{{ is_updated }}</p>
+{% endif %}
+
+{% if help_information %}
+  <p>输入城市名，点击查询获得天气信息；</p>
+      <p>点击帮助获得帮助信息；</p>
+      <p>点击历史获得查询历史信息；</p>
+      <p>输入（城市名 常见天气）点击更正，更正天气信息。</p>
+{% endif %}
+
+{% if inquiry_outcome %}
+  <h2>{{ inquiry_outcome.city }}</h2>
+  <p>天气:{{ inquiry_outcome.weather }}</p>
+  <p>温度:{{ inquiry_outcome.temp }}°C</p>
+  <p>时间:{{ inquiry_outcome.update_time }}</p>
+{% endif %}
+
+{% if inquiry_history %}
+  {% for item in inquiry_history %}
+<p>{{ item.city }}：
+      {{ item.weather }}
+      {{ item.temp }}°C
+      更新时间：{{ item.update_time }}</p>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}

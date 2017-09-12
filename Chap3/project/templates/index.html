@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>天气状况查询</h1>
+<form action="" method="POST">
+  <p>
+    <input type="text" name="location" placeholder="请输入要查询的城市">
+    <input type="submit" name="action" value="查询">
+    <input type="submit" name="action" value="帮助">
+    <input type="submit" name="action" value="历史">
+  </p>
+</form>
+
+{% block inquiry_outcome %}
+{% endblock %}
+
+{% block help %}
+{% endblock %}
+
+{% block inquiry_list %}
+{% endblock %}
+
+{% block error_message %}
+{% endblock %}
+
+{% endblock %}

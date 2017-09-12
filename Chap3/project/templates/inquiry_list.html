@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block inquiry_list %}
+
+<form action="/" method="GET">
+  {% for item in outcome %}
+    <br>{{ item['city'] }}的
+      天气为{{ item['weather_condition'] }}，
+      温度为{{ item['temperature'] }}摄氏度。
+      更新时间为{{ item['update_time'] }}。</br>
+  {% endfor %}
+</form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+body {
+    background-image: url("https://static.pexels.com/photos/424163/pexels-photo-424163.jpeg");
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+p {
+    font-size: 25px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    margin: 2px 2px;
+    cursor: pointer;
+}

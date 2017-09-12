@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block inquiry_outcome %}
+
+<form action="/" method="GET">
+    <h2>{{ outcome['city'] }}</h2>
+    <p>天气：{{ outcome['weather_condition'] }}</p>
+    <p>温度：{{ outcome['temperature'] }}摄氏度</p>
+    <p>时间：{{ outcome['update_time'] }}。</p>
+</form>
+
+{% endblock %}
